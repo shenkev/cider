@@ -66,7 +66,7 @@ class CiderScorer(object):
         self.df_mode = df_mode
         self.ref_len = None
         if self.df_mode != "corpus":
-            pkl_file = pickle.load(open(os.path.join('data', df_mode + '.p'),'r'))
+            pkl_file = pickle.load(open(df_mode,'r'))
             self.ref_len = np.log(float(pkl_file['ref_len']))
             self.document_frequency = pkl_file['document_frequency']
         self.cook_append(test, refs)
